@@ -14,7 +14,6 @@ fn main() {
         },
         None => {
             println!("pass timestamp only");
-            return;
         }
     }
 }
