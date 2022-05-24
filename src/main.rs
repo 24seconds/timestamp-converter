@@ -38,7 +38,10 @@ fn parse_number(n: &str) {
 
             (t, 0)
         }
-        _ => return
+        _ => {
+            println!("input is not length of {} or {}", TIMESTAMP_NANO_LEN, TIMESTAMP_SECOND_LEN);
+            return;
+        }
     };
 
     let t_utc = Utc.timestamp(secs, nsecs as u32);
