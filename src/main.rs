@@ -1,11 +1,11 @@
 use chrono::{Utc, TimeZone, Local, DateTime};
-use clap::{arg, command};
+use clap::{arg, Command};
 
 const TIMESTAMP_NANO_LEN: usize = 16;
 const TIMESTAMP_SECOND_LEN: usize = 10;
 
 fn main() {
-    let matches = command!()
+    let matches = Command::new("time-converter")
         .arg(arg!([TIMESTAMP])).get_matches();
 
     match matches.value_of("TIMESTAMP") {
