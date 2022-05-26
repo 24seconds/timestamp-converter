@@ -1,7 +1,7 @@
 use chrono::{Utc, TimeZone, Local, DateTime};
 use clap::{arg, Command};
 
-const TIMESTAMP_NANO_LEN: usize = 16;
+const TIMESTAMP_NANO_LEN: usize = 19;
 const TIMESTAMP_SECOND_LEN: usize = 10;
 
 fn main() {
@@ -18,8 +18,8 @@ fn main() {
     }
 }
 
-// timestamp nano 1649841697701309
-// unix timestamp 1653405628XXXXXX
+// timestamp nano 1000000000000000555
+// unix timestamp 1653405628XXXXXXXXX
 // RFC 3339 format string should be printed
 fn parse_number(n: &str) {
 
@@ -28,7 +28,7 @@ fn parse_number(n: &str) {
         t if n.len() == TIMESTAMP_NANO_LEN => {
             // TODO(young): handle error
             let t = t.parse::<i64>().unwrap();
-            let secs = t / 1_000_000;
+            let secs = t / 1_000_000_000;
             let nsecs = t - secs;
 
             (secs, nsecs)
