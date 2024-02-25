@@ -16,4 +16,4 @@ license = "Beerware"
 
 [dependencies]
 clap = "3.1.18"
-chrono = "0.4.19"
+chrono = "0.4.34"
